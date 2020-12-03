@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +17,7 @@ import java.util.List;
 public class ExcelProcess {
 
 
-
+@RequestMapping("/excelprocess")
     public List<String> process(String rdname, String pathname) {
         List<String> list = new ArrayList<String>();
 
