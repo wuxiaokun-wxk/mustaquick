@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="ExcelProcess类传入rename=作者">
+    <test name="作者">
+        <paramater name="rename" value="作者"></paramater>
+        <classes>
+            <class name="com.mustaquick.ExcelProcess">
+                <method>
+                    <include name="getProcess"></include>
+                </method>
+            </class>
+        </classes>
+
+    </test>
+
+</suite>

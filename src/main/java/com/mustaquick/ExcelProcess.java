@@ -19,6 +19,8 @@ import java.util.List;
 @ResponseBody
 public class ExcelProcess {
 private static String path="C:\\\\Users\\\\wb-wxk505493\\\\Downloads\\\\bug.xlsx";
+private static String oss_path="https://117888.oss-cn-hangzhou.aliyuncs.com/xgc_test_cases/bvt_data/280/bug.xlsx";
+
 
 @RequestMapping("/getProcess")
 public List<String> getProcess(String rename){
