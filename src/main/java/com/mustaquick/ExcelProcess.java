@@ -1,24 +1,41 @@
 package com.mustaquick;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.ExcelStyleDateFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-@Controller
+@RestController
+@ResponseBody
 public class ExcelProcess {
+private static String path="C:\\\\Users\\\\wb-wxk505493\\\\Downloads\\\\bug.xlsx";
 
+@RequestMapping("/getProcess")
+public List<String> getProcess(String rename){
+    String s;
+    ExcelProcess excelProcess=new ExcelProcess();
+    List <String> list=excelProcess.process(rename,path);
+   Iterator iterator=list.iterator();
+   while (iterator.hasNext()){
+       s=(String) iterator.next();
+   }
+   return list;
 
-@RequestMapping("/excelprocess")
-    public List<String> process(String rdname, String pathname) {
+}
+
+@RequestMapping(value = "/process",method = RequestMethod.GET)
+    public List<String> process(@RequestParam(required = true) String rdname,
+                                @RequestParam(required = true) String pathname) {
         List<String> list = new ArrayList<String>();
 
         try {
@@ -69,6 +86,12 @@ public class ExcelProcess {
         }
         return list;
 
+
+    }
+
+    @RequestMapping( "/hello")
+    public String HelloWorld(){
+    return "Hello World";
 
     }
 }
