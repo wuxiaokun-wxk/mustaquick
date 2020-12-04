@@ -63,7 +63,7 @@ public List<String> getProcess(String rename){
                         if (sheet.getRow(0).getCell(rownum).getStringCellValue().equals(rdname)) {
                             //Row row=sheet.getRow(0);
                             //取每一行的目标列加入到list中,并返回
-                            for (int allrow = 0; allrow < sheet.getLastRowNum(); allrow++) {
+                            for (int allrow = 1; allrow < sheet.getLastRowNum(); allrow++) {
                                 String string = sheet.getRow(allrow).getCell(rownum).getStringCellValue();
                                 //System.out.println(string);
                                 list.add(string);
