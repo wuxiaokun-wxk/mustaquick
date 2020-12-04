@@ -3,9 +3,9 @@
     <test name="作者">
         <parameter name="rename" value="作者" />
         <classes>
-            <class name="com.mustaquick.ExcelProcess">
+            <class name="com.mustaquick.ExcelProcessTest">
                 <methods>
-                    <include name = "getProcess" />
+                    <include name = "testGetProcess" />
                 </methods>
             </class>
         </classes>
