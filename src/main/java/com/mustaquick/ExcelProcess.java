@@ -4,6 +4,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -18,7 +19,6 @@ import java.util.List;
 public class ExcelProcess {
 private static String path="C:\\\\Users\\\\wb-wxk505493\\\\Downloads\\\\bug.xlsx";
 private static String oss_path="https://117888.oss-cn-hangzhou.aliyuncs.com/xgc_test_cases/bvt_data/280/bug.xlsx";
-
 
 @RequestMapping("/getProcess")
 public List<String> getProcess(String rename){
@@ -93,5 +93,10 @@ public List<String> getProcess(String rename){
     public String HelloWorld(){
     return "Hello World";
 
+    }
+
+    @Bean
+    public ExcelProcess excelProcess(){
+    return new ExcelProcess();
     }
 }
