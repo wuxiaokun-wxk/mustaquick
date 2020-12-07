@@ -8,9 +8,10 @@ import java.util.List;
 
 public class ExcelProcessTest {
     @Test
-    public void testGetProcess(String rename){
+    public List<String> testGetProcess(String rename){
         ExcelProcess excelProcess=new ExcelProcess();
         List<String> list=excelProcess.getProcess(rename);
+        return list;
 
     }
 }

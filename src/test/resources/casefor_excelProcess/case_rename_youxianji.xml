@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="111">
+
+    <test name="111">
+        <parameter name="rename" value="优先级" />
+        <classes>
+            <class name="com.mustaquick.ExcelProcessTest">
+                <methods>
+                    <include name="testGetProcess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
