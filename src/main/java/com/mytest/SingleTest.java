@@ -1,2 +1,4 @@
-package com.mytest;public class SingleTest {
+package com.mytest;
+
+public class SingleTest {
 }
