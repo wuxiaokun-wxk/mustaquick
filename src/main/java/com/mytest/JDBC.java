@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.logging.Logger;
+/*
+@Author wuxiaokun
+@Date 2021.7.16
 
+ */
 public class JDBC {
     //JDBC 驱动名；
     static final String JDBC_DRIVER="com.mysql.jdbc.Driver";
