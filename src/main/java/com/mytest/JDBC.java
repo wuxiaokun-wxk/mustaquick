@@ -1,5 +1,8 @@
 package com.mytest;
 
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,6 +20,8 @@ public class JDBC {
     //数据库用户名、密码；
     static final String USER="root";
     static final String PASSWORD="";
+    //private static final Logger log = LoggerFactory.getLogger({JDBC}.getClass());
+
     public static void main(String[] args) {
         Connection connection;
         Statement statement;
@@ -27,6 +32,7 @@ public class JDBC {
             Class.forName(JDBC_DRIVER);
             System.out.println("连接数据库...");
             //连接数据库；
+
             connection=DriverManager.getConnection(DB_URL,USER,PASSWORD);
             System.out.println(" 实例化Statement对象...");
             //执行查询；
