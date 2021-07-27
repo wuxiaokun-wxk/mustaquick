@@ -61,8 +61,12 @@ public class JDBC {
             e.printStackTrace();
 
         };
+JDBC jdbc=new JDBC();
+Class aClass=jdbc.getClass();
 
-
+log.info(aClass.getName());
     }
+
+
 
 }
