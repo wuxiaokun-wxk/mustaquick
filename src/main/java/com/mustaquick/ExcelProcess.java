@@ -95,8 +95,8 @@ public List<String> getProcess(String rename){
 
     }
 
-    @Bean
+    /*@Bean
     public ExcelProcess excelProcess(){
     return new ExcelProcess();
-    }
+    }*/
 }
