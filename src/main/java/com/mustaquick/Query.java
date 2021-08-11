@@ -1,8 +1,8 @@
 package com.mustaquick;
 
 public interface Query {
-    String queryByname();
-    String queryByaddress();
+    public abstract String queryByname();
+    public abstract String queryByaddress();
 
 
 }
