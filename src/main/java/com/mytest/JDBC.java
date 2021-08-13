@@ -4,6 +4,7 @@ import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 
 import java.net.ConnectException;
 import java.sql.Connection;
@@ -61,10 +62,49 @@ public class JDBC {
             e.printStackTrace();
 
         };
+
 JDBC jdbc=new JDBC();
 Class aClass=jdbc.getClass();
 
 log.info(aClass.getName());
+    }
+@Bean
+    public void jdbcForQuery(){
+        Connection connection;
+        Statement statement;
+
+
+        try{
+            //注册JDBC驱动；
+            Class.forName(JDBC_DRIVER);
+            //System.out.println("连接数据库...");
+            //连接数据库；
+            log.info("链接数据库");
+            connection=DriverManager.getConnection(DB_URL,USER,PASSWORD);
+            System.out.println(" 实例化Statement对象...");
+            //执行查询；
+            statement=connection.createStatement();
+            String SQL="select id, name, url FROM websites";
+            ResultSet resultSet =statement.executeQuery(SQL);
+
+            while (resultSet.next()){
+                int id=resultSet.getInt("id");
+                String name=resultSet.getString("name");
+                String url=resultSet.getString("url");
+                System.out.print("ID: " + id);
+                System.out.print(", 站点名称: " + name);
+                System.out.print(", 站点 URL: " + url);
+                System.out.print("\n");
+
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+
+        };
     }
 
 
