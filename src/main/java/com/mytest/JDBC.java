@@ -68,8 +68,7 @@ Class aClass=jdbc.getClass();
 
 log.info(aClass.getName());
     }
-@Bean
-    public void jdbcForQuery(){
+    public ResultSet queryByName(){
         Connection connection;
         Statement statement;
 
@@ -87,7 +86,7 @@ log.info(aClass.getName());
             String SQL="select id, name, url FROM websites";
             ResultSet resultSet =statement.executeQuery(SQL);
 
-            while (resultSet.next()){
+           /* while (resultSet.next()){
                 int id=resultSet.getInt("id");
                 String name=resultSet.getString("name");
                 String url=resultSet.getString("url");
@@ -96,16 +95,21 @@ log.info(aClass.getName());
                 System.out.print(", 站点 URL: " + url);
                 System.out.print("\n");
 
-            }
-            resultSet.close();
-            statement.close();
-            connection.close();
+            }*/
+            return resultSet;
+
+            //resultSet.close();
+            //statement.close();
+            //connection.close();
 
         }catch (Exception e){
             e.printStackTrace();
 
         };
-    }
+
+    return null;
+
+}
 
 
 
